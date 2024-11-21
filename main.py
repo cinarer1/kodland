@@ -7,6 +7,7 @@ intents.message_content = True
 # client (istemci) değişkeniyle bir bot oluşturalım ve ayrıcalıkları ona aktaralım
 client = discord.Client(intents=intents)
 
+foto = mem1.jpg
 @client.event
 async def on_ready():
     print(f'{client.user} olarak giriş yaptık.')
@@ -22,6 +23,8 @@ async def on_message(message):
     else:
         await message.channel.send(message.content) 
 
+@client.event
+async def on message
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
@@ -33,7 +36,14 @@ class MyClient(discord.Client):
             to_send = f'Welcome {member.mention} to {guild.name}!'
             await guild.system_channel.send(to_send)
 
+@client.event
+async def on_message(message):
+    if message.aauthor == client.user:
+        return
+    if message.content.startswitch("$mem"):
+        await message.channel.send(foto)
 
+        
 intents = discord.Intents.default()
 intents.members = True
 
